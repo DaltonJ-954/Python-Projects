@@ -1,10 +1,10 @@
 class Movies: # This "movies" class is the parent
-    duration = "120 min"
+    duration = '120 min'
     genre = 'horror'
     film_year = '2015'
 
 
-class studios(Movies): # The "studios" class is one that inherits the parent one
+class studios(): # The "studios" class is one that inherits the parent one
     number_of_films = 600
     budgets = '20 million'
     earnings = '2.3 million'
@@ -12,7 +12,8 @@ class studios(Movies): # The "studios" class is one that inherits the parent one
 
 
 
-class director(Movies): # 2nd child class
+class director(): # 2nd child class
+    name = 'Unknown'
     movies_directed = '26'
     coDirected = '4 films'
     school = 'Duke'
@@ -20,20 +21,21 @@ class director(Movies): # 2nd child class
 
 
 
-class actor(Movies): # And this is the third class that inherits the parent
+class actor(): # And this is the third class that inherits the parent
+    name = 'Jim Carey'
     starred_in = 0
     coStarred_in = 0
-    awards = 0
-    years_acting = 0
+    awards = 12
+    years_acting = 30
 
 # All classes each have one or more attributes to them
 
+x = Movies()
 
-x = director()
 
 if __name__ == "__main__":
-    Movies()
-    print("Mel went to " + x.school + " college.")
-    print("Mel directed " x.movies_directed " films for " + x.company + " personally.")
+    x = director()
+    print("Mel went to " + x.school + " college and directed over " + x.movies_directed + " films.")
     
-    
+    z = actor()
+    print("The actor {} has been acting for {} years, and has won over {} awards".format(z.name,z.years_acting,z.awards))
