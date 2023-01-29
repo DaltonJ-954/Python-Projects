@@ -2,6 +2,4 @@ consoles = ["Sega Genesis", "Neo Geo", "Super Nintendo", "Playstation 5", "Xbox 
 
 z = consoles.count("Neo Geo")
 
-print(z)
-
-len(consoles)
+print(consoles[3])

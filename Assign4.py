@@ -1,7 +1,7 @@
 plants = ['flowers','trees','grass','cactus','seaweed',]
 
-i = 0
+x = 0
 
-for i in []:
+for x in []:
     if i < 4:
-        print(i)
+        print(x)
