@@ -1,3 +1,4 @@
+# Imports for tkinter and the webbrowser modules
 import tkinter as tk
 from tkinter import *
 import webbrowser
@@ -9,9 +10,11 @@ class ParentWindow(Frame):
         Frame.__init__(self, master)
         self.master.title("Web Page Generator")
 
+        # Button for the Default  HTML Page
         self.btn = Button(self.master, text="Default HTML Page", width=30, height=2, command=self.defaultHTML)
         self.btn.grid(row=3, column=2, padx=(0, 30), pady=(20, 10))
 
+        # Button for the Submit Custom Text
         self.btn = Button(self.master, text="Submit Custom Text", width=30, height=2, command=self.customText)
         self.btn.grid(row=3, column=3, padx=(0, 0), pady=(20, 10))
 
@@ -21,8 +24,9 @@ class ParentWindow(Frame):
         self.lbl = tk.Label(self.master,text='Enter custom text or click the Default HTML page button')
         self.lbl.grid(row=0,column=0,padx=(0, 0),pady=(25,0),sticky=N+W)
 
-        htmlContent = "<html>\n<body>\n<h1>" + '' + "</h1>\n</body>\n</html>"
-        
+        # htmlContent = "<html>\n<body>\n<h1>" + '' + "</h1>\n</body>\n</html>"
+
+    # The defaultHTML function is for hardcoded data
     def defaultHTML(self):
         htmlText = "Stay tuned for our amazing summer sale!"
         htmlFile = open("index.html", "w")
@@ -32,7 +36,7 @@ class ParentWindow(Frame):
         webbrowser.open_new_tab("index.html")
 
 
-    
+    # This Custom Text function is designed to input cust data to the generated web page
     def customText(self):
         input_text = self.entry.get()
         htmlFile = open("index.html", "w")

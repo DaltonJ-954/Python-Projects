@@ -52,7 +52,6 @@ class ParentWindow(Frame):
         
         # Timedelta function demonstration
  
-        from datetime import datetime, timedelta
  
         # printing initial_date
         # print ("The current date", str())
