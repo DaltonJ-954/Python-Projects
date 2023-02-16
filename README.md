@@ -3,4 +3,3 @@
 
 - [Django_Checkbook_Project](https://github.com/DaltonJ-954/Python-Projects/tree/main/Django_Checkbook_Project)
 * [Django University](https://github.com/DaltonJ-954/Python-Projects/tree/main/DjangoUniversity)
-+ []
