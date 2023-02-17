@@ -7,5 +7,8 @@
 * [Django University](https://github.com/DaltonJ-954/Python-Projects/tree/main/DjangoUniversity)
 
 ## Django_Checkbook_Project
-A Python banking app that has deposit, withdrawal, view + add transactions, and create an account features
+A Python banking app that has deposit, withdrawal, view & add transactions, and create an account features
 that uses a multitude of modules, functions, and mwthods.
+
+## Django_University
+This is a school app in Python designed to create, modify, and delete college and state inputs.
