@@ -1,0 +1,6 @@
+'''
+    path('create/', views.gamingicons_create, name='gamingicons_create'),
+    path('list/', views.gamingicons_list, name='gamingicons_list'),
+    path('<int:pk>/delete/', views.deleteEntry, name='deleteEntry'),
+    path('<int:pk>/edits/', views.editList, name='editList'),
+    '''
