@@ -1,4 +1,4 @@
-cans = 30
+cans = 10
 case = True
 
 if cans == 13:

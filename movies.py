@@ -35,7 +35,7 @@ x = Movies()
 
 if __name__ == "__main__":
     x = director()
-    print("Mel went to " + x.school + " college and directed over " + x.movies_directed + " films.")
+    print("Mel went to " + x.name + " college and directed over " + x.movies_directed + " films.")
     
     z = actor()
     print("The actor {} has been acting for {} years, and has won over {} awards".format(z.name,z.years_acting,z.awards))

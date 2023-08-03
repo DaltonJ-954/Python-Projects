@@ -25,11 +25,11 @@ class Human(Organism):
     origin = 'Earth'
 
     def ingenuity(self):
-        msg = "\nCreati a deadly weapon using only a paper clip, chewing gum, and a roll of duct tape!"
+        msg = "\nCreating a deadly weapon using only a paper clip, chewing gum, and a roll of duct tape!"
         return msg
 
 
-# Another class
+# Second child class instance
 class Dog(Organism):
     name = "Spot"
     species = "Canine"
@@ -42,7 +42,7 @@ class Dog(Organism):
         msg = "\nEmits a loud, menacing growl and bites down ferociously on it's target!"
         return msg
 
-# Another child class instance
+# Thrid child class instance
 class Bacterium(Organism):
     name = "X"
     species = "Bacteria"
@@ -51,13 +51,22 @@ class Bacterium(Organism):
     dna = "Sequence C"
     origin = "Mars"
 
-
     def replication(self):
         msg = "\nThe cells begin to divide and multiply into two seperate organisms!"
         return msg
     
+# Fourth child class instance
+class Alien(Organism):
+    name = "Reptillian"
+    species = "Unkown"
+    legs = 2
+    arms = 2
+    dna = "Sequence X-01199"
+    origin = "Universe"
 
-
+    def technology(self):
+        msg = "\nAs the gigantic ship lands, time slowed down and gravity was at zero. We are helpless to there capabilities."
+        return msg
 
 
 if __name__ == "__main__":
@@ -72,3 +81,7 @@ if __name__ == "__main__":
     bacterium = Bacterium()
     print(bacterium.information())
     print(bacterium.replication())
+
+    alien = Alien()
+    print(alien.information())
+    print(alien.technology())
