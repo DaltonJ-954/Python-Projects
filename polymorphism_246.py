@@ -1,7 +1,7 @@
 # Parent class MyCompany
 
 class MyCompany:
-    name = "Keith Richter"
+    managerName = "Keith Richter"
     contract = "MartBrow2223"
     password = "954_MB46"
 
@@ -48,7 +48,7 @@ class Employee(MyCompany):
         empoyee_email = input("Enter your email: ")
         empoyee_password = input("Please enter your password: ")
         if (empoyee_email == self.email and empoyee_password == self.password):
-            print("Manager log in initiated for {}. Select option.".format(empoyee_name))
+            print("Manager {} log in initiated for {}. Select option.".format(empoyee_name))
         else:
             print("Incorrect password entry, please try again!")
 

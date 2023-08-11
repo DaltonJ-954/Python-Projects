@@ -13,8 +13,8 @@ class studios(): # The "studios" class is one that inherits the parent one
 
 
 class director(): # 2nd child class
-    name = 'Unknown'
-    movies_directed = '26'
+    name = 'UCLA'
+    movies_directed = '36'
     coDirected = '4 films'
     school = 'Duke'
     highest_nominated_award = 'Grammy'
@@ -35,7 +35,9 @@ x = Movies()
 
 if __name__ == "__main__":
     x = director()
-    print("Mel went to " + x.name + " college and directed over " + x.movies_directed + " films.")
+    a = Movies()
+    b = studios()
+    print("Mel went to " + x.name + " college and directed over " + x.movies_directed + " films. Also he co-directed " + x.coDirected + " with " + b.company + ".")
     
     z = actor()
     print("The actor {} has been acting for {} years, and has won over {} awards".format(z.name,z.years_acting,z.awards))
