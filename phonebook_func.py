@@ -105,7 +105,7 @@ def addToList(self):
     var_lname = var_lname.strip() # This will ensure that the first character in each word is capitalized
     var_fname = var_fname.title()
     var_lname = var_lname.title()
-    var_fullname = ("{} {}".format(var_fname,var_lname)) # Combine our normalilzed names into fullname
+    var_fullname = ("{} {}".format(var_fname,var_lname)) # Combine our normalized names into fullname
     print("var_fullname: {}".format(var_fullname))
     var_phone = self.txt_phone.get().strip()
     var_email = self.txt_email.get().strip()
@@ -115,18 +115,18 @@ def addToList(self):
         conn = sqlite3.connect('phonebook.db')
         with conn:
             cursor = conn.cursor()
-            # Check the databse for existance of the fullname, if so we wil alert user and disregard request
+            # Check the database for existence of the fullname, if so we wil alert user and disregard request
             cursor.execute("""SELECT COUNT(col_fullname) FROM tbl_phonebook WHERE col_fullname = '{}'""".format(var_fullname))#,(var_fullname)
             count = cursor.fetchone()[0]
             chkName = count
-            if chkName == 0: # If this is 0 then there is no existance of the fullname and we can add new data
+            if chkName == 0: # If this is 0 then there is no existence of the fullname and we can add new data
                 print("chkName: {}".format(chkName))
                 cursor.execute("""INSERT INTO tbl_phonebook (col_fname,col_lname,col_fullname,col_phone,col_email) VALUES (?,?,?,?,?)""")
                 self.lstList1.insert(END, var_fullname) # Update listbox with the new fullname
-                onClear(self) # Call the function to clear all of the textboxes
+                onClear(self) # Call the function to clear all of the textbox
             else:
-                messagebox.showerror("Name Errore","'{}' already exist in the database! Please choose a different name.".format(var_fullname))
-                onClear(self) # Call all the functions to clear all of the textboxes
+                messagebox.showerror("Name Error","'{}' already exist in the database! Please choose a different name.".format(var_fullname))
+                onClear(self) # Call all the functions to clear all of the textbox
         conn.commit()
         conn.close()
     else:
@@ -143,13 +143,13 @@ def onDelete(self):
         cur.execute("""SELECT COUNT(*) FROM tbl_phonebook""")
         count = cur.fetchone()[0]
         if count > 1:
-            confirm = messagebox.askokcancel("Delete Confirmation", "All information associated with, ({}) \nwill be permenantly deleted")
+            confirm = messagebox.askokcancel("Delete Confirmation", "All information associated with, ({}) \nwill be permanently deleted")
             if confirm:
                 conn = sqlite3.connect('phonebook.db')
                 with conn:
                     cursor = conn.cursor()
                     cursor.execute("""DELETE FROM tbl_phonebook WHERE col_fullname = '{}'""".format(var_select))
-                onDelet(self) # Call the functions to clear all the textboxes and the selected index of listbox
+                onDelet(self) # Call the functions to clear all the textbox and the selected index of listbox
 ######             onRefresh(self) # update the listbox of the changes
                 conn.commit()
         else:
@@ -157,7 +157,7 @@ def onDelete(self):
     conn.close()
 
 def onDeleted(self):
-    # clear the text in these textboxes
+    # clear the text in these textbox
     self.txt_fname.delete(0,END)
     self.txt_lname.delete(0,END)
     self.txt_phone.delete(0,END)
@@ -170,7 +170,7 @@ def onDeleted(self):
         pass
 
 def onClear(self):
-    # Clear the text in the textboxes
+    # Clear the text in the textbox
     self.txt_fname.delete(0,END)
     self.txt_lname.delete(0,END)
     self.txt_phone.delete(0,END)
@@ -204,13 +204,13 @@ def onUpdate(self):
         return
     # The user will only be allowed to update changes for phone and emails.
     # For name changes, the user will need to delete the entire record and start over.
-    var_phone = self.txt_phone.get().strip() # Normalise the data to maintain database integrity
+    var_phone = self.txt_phone.get().strip() # Normalize the data to maintain database integrity
     var_email = self.txt_email.get().strip()
     if (len(var_phone) > 0) and (len(var_email) > 0): # Ensure that there is data present
         conn = sqlite3.connect('phonebook.db')
         with conn:
             cur = conn.cursor()
-            # Count records to see th euser's changes are already in
+            # Count records to see the user's changes are already in
             # the database...meaning, there are no changes to update.
             cur.execute("""SELECT COUNT(col_phone) FROM tbl_phonebook WHERE col_phone = '{}'""".format(var_phone))
             count = cur.fetchone()[0]

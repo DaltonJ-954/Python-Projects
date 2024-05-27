@@ -25,7 +25,7 @@ class ParentWindow(Frame):
     def __init__(self, master, *args, **kwargs):
         Frame.__init__(self, master, *args, **kwargs)
 
-        #Define our master frame confirguration
+        #Define our master frame configuration
         self.master = master
         self.master.minsize(500,300) # (Width, Height)
         self.master.maxsize(500,300)
@@ -54,12 +54,12 @@ class ParentWindow(Frame):
         helpmenu.add_separator()
         helpmenu.add_command(label="How to use this program")
         helpmenu.add_separator()
-        helpmenu.add_command(label="About This Phonebook Demo") # add_command is a child menubar item of the add_cascde parent item
+        helpmenu.add_command(label="About This Phonebook Demo") # add_command is a child menubar item of the add_cascade parent item
         menubar.add_cascade(label="Help", menu=helpmenu) # add_cascade is a parent menubar item (visible heading)
         """
             Finally, we apply the config method of the widget to display the menu
-            From here we could also pass in additional aprams for additional 
-            functionalityor appearances such as a borderwidth.
+            From here we could also pass in additional parameters for additional 
+            functionality or appearances such as a border width.
         """
         self.master.config(menu=menubar, borderwidth='1')
 
